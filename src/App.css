@@ -18,6 +18,19 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.icon-logo {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.icon-logo-right-side-label {
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,6 +50,9 @@
   padding: 2em;
 }
 
-.read-the-docs {
+.source-code-link {
   color: #888;
+}
+.source-code-link:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }

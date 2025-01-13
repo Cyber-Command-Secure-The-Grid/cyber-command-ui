@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import githubLogo from './assets/icon-github.svg';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -16,18 +17,19 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Cyber Command</h1>
+      <h3>Build your team. Secure the grid. Protect the nation.</h3>
       <div className="card">
         <button onClick={() => { setCount((count) => count + 1); }}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <a className="source-code-link" href="https://github.com/msayson/cyber-command-ui">
+        <span>
+          <img src={githubLogo} className="icon-logo" alt="GitHub logo" />
+        </span>
+        <span className="icon-logo-right-side-label">Source code</span>
+      </a>
     </>
   );
 }

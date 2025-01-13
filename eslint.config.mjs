@@ -33,9 +33,9 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       '@typescript-eslint/no-confusing-void-expression': 'off',
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single'],
       'indent': ['error', 2],
+      'quotes': ['error', 'single'],
+      'semi': ['error', 'always'],
     },
     settings: {
       react: {
