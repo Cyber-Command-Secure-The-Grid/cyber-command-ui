@@ -28,7 +28,7 @@ function App() {
         <span>
           <img src={githubLogo} className="icon-logo" alt="GitHub logo" />
         </span>
-        <span className="icon-logo-right-side-label">Source code</span>
+        <span className="icon-logo-right-side-label">Project source code</span>
       </a>
     </>
   );
