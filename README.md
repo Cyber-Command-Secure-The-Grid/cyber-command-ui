@@ -1,6 +1,8 @@
-# (Work-in-progress) cyber-command-ui
+# cyber-command-ui
 
-This repository contains the frontend code for a web app based game called Cyber Command, a roleplaying game where you have been tasked with rebuilding a small nation's cyber security team.
+This repository contains the frontend code for a web app based game called Cyber Command.
+
+Cyber Command is a roleplaying game in which you are tasked with rebuilding a small nation's cyber security team.
 
 ## Project resources
 
@@ -10,3 +12,6 @@ This repository contains the frontend code for a web app based game called Cyber
 
 * [React](https://react.dev), a popular JavaScript/TypeScript web app framework
 * [Vite](https://vite.dev), a build tool that optimizes production builds and provides instant updates to local servers without reloading pages or wiping application state
+
+## License
+The code in this project is released under the [GPL-3.0 License](LICENSE).
