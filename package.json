@@ -10,6 +10,7 @@
     "lint": "eslint . --fix",
     "preview": "vite preview",
     "test": "npm run lint && vitest --run --coverage",
+    "test:no-lint": "vitest --run",
     "test:coverage": "nyc --reporter=text --reporter=lcov vitest --run",
     "test:watch": "npm run lint && vitest"
   },

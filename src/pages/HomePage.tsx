@@ -1,15 +1,12 @@
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import cyberCommandLogo from '../assets/CyberCommandLogo_248x248.png';
 import githubLogo from '../assets/icon-github.svg';
+import { GAME_TAGLINE, GAME_TITLE } from '../constants/GameMetadata';
+import { GAME_URL_PATH } from '../constants/UrlPaths';
 import '../styles/App.css';
 
-export const gameTitle = 'Cyber Command';
-export const gameTagLine = 'Build your team. Secure the grid. Protect the nation.';
-
 export function HomePage() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div>
@@ -17,12 +14,12 @@ export function HomePage() {
           <img src={cyberCommandLogo} className="logo" alt="Cyber Command logo" />
         </span>
       </div>
-      <h1>{gameTitle}</h1>
-      <h3>{gameTagLine}</h3>
+      <h1>{GAME_TITLE}</h1>
+      <h3>{GAME_TAGLINE}</h3>
       <div className="card">
-        <button onClick={() => { setCount((count) => count + 1); }}>
-          count is {count}
-        </button>
+        <Link to={GAME_URL_PATH}>
+          <button aria-label="Play Cyber Command" data-testid="play-button">Play</button>
+        </Link>
       </div>
       <a className="source-code-link" href="https://github.com/msayson/cyber-command-ui">
         <span>
