@@ -9,7 +9,8 @@ export default tseslint.config(
     ignores: [
       'dist',
       'coverage',
-      'vite.config.ts'
+      'vite.config.ts',
+      'vitest.config.ts'
     ]
   },
   {

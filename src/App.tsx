@@ -3,7 +3,10 @@ import cyberCommandLogo from './assets/CyberCommandLogo_248x248.png';
 import githubLogo from './assets/icon-github.svg';
 import './App.css';
 
-function App() {
+export const gameTitle = 'Cyber Command';
+export const gameTagLine = 'Build your team. Secure the grid. Protect the nation.';
+
+export default function App() {
   const [count, setCount] = useState(0);
 
   return (
@@ -13,8 +16,8 @@ function App() {
           <img src={cyberCommandLogo} className="logo" alt="Cyber Command logo" />
         </span>
       </div>
-      <h1>Cyber Command</h1>
-      <h3>Build your team. Secure the grid. Protect the nation.</h3>
+      <h1>{gameTitle}</h1>
+      <h3>{gameTagLine}</h3>
       <div className="card">
         <button onClick={() => { setCount((count) => count + 1); }}>
           count is {count}
@@ -29,5 +32,3 @@ function App() {
     </>
   );
 }
-
-export default App;
