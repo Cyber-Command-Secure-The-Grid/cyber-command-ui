@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import cyberCommandLogo from './assets/CyberCommandLogo_248x248.png';
 import githubLogo from './assets/icon-github.svg';
-import './App.css';
+import './styles/App.css';
 
 export const gameTitle = 'Cyber Command';
 export const gameTagLine = 'Build your team. Secure the grid. Protect the nation.';
