@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import App, { gameTagLine, gameTitle } from '../src/App';
@@ -21,6 +21,19 @@ describe('App component', () => {
 
     expect(mainHeading).toHaveTextContent(gameTitle);
     expect(subHeading).toHaveTextContent(gameTagLine);
+  });
+
+  it('increments the count when the button is clicked', () => {
+    render(<App />);
+    const button = screen.getByRole('button', { name: /count is/i });
+
+    expect(button).toHaveTextContent('count is 0');
+
+    fireEvent.click(button);
+    expect(button).toHaveTextContent('count is 1');
+
+    fireEvent.click(button);
+    expect(button).toHaveTextContent('count is 2');
   });
 
   it('renders the GitHub link', () => {

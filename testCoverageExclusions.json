@@ -1,0 +1,10 @@
+{
+  "exclude": [
+    "**/*.js",
+    "**/*.mts",
+    "**/*.mjs",
+    "coverage/**",
+    "dist/**",
+    "node_modules/**"
+  ]
+}
