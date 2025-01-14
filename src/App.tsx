@@ -1,7 +1,6 @@
 import { useState } from 'react';
+import cyberCommandLogo from './assets/CyberCommandLogo_248x248.png';
 import githubLogo from './assets/icon-github.svg';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 
 function App() {
@@ -10,12 +9,9 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <span>
+          <img src={cyberCommandLogo} className="logo" alt="Cyber Command logo" />
+        </span>
       </div>
       <h1>Cyber Command</h1>
       <h3>Build your team. Secure the grid. Protect the nation.</h3>
