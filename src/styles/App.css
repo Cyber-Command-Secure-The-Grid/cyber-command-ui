@@ -26,3 +26,9 @@
 .source-code-link:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+
+.play-button {
+  background-image: linear-gradient(to bottom, #F2F2F2, #E9E9E9);
+  border-color: #c2c2c2;
+  font-weight: 600;
+}
