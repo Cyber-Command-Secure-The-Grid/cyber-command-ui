@@ -27,8 +27,22 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.play-button {
+.game-button {
   background-image: linear-gradient(to bottom, #F2F2F2, #E9E9E9);
   border-color: #c2c2c2;
   font-weight: 600;
+}
+
+.dialogue {
+  text-align: left;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dialogue-container-with-input {
+  display: flex;
+  flex-direction: column;
 }

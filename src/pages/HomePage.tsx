@@ -18,7 +18,7 @@ export function HomePage() {
       <h3>{GAME_TAGLINE}</h3>
       <div className="card">
         <Link to={GAME_URL_PATH}>
-          <button className="play-button" aria-label="Play Cyber Command" data-testid="play-button">Play</button>
+          <button className="game-button" aria-label="Play Cyber Command" data-testid="play-button">Play</button>
         </Link>
       </div>
       <a className="source-code-link" href="https://github.com/msayson/cyber-command-ui">
