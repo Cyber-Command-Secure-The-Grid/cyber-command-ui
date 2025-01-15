@@ -57,16 +57,28 @@ describe('PlayerNameInput component', () => {
     const inputField = screen.getByRole('textbox');
     fireEvent.keyDown(inputField, { key: 'Enter', code: 'Enter' });
 
-    expect(onEnterMock).toHaveBeenCalledTimes(0);
+    expect(onEnterMock).not.toHaveBeenCalled();
   });
 
-  it('calls onEnter when button is clicked', () => {
+  it('calls onEnter when button is clicked if input field is non-empty', () => {
     renderPlayerNameInput();
+
+    const inputField = screen.getByRole('textbox');
+    fireEvent.change(inputField, { target: { value: validPlayerName } });
 
     const button = screen.getByRole('button', { name: 'Enter' });
     fireEvent.click(button);
 
     expect(onEnterMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not call onEnter when button is clicked if input field is empty', () => {
+    renderPlayerNameInput();
+
+    const button = screen.getByRole('button', { name: 'Enter' });
+    fireEvent.click(button);
+
+    expect(onEnterMock).not.toHaveBeenCalled();
   });
 
   function validateDeletingHighlightedTest(deletionKey: string) {

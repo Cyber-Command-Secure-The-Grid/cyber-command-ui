@@ -29,17 +29,33 @@ export const PlayerNameInput: React.FC<PlayerNameInputProps> = ({ setName, onEnt
   };
 
   /**
+   * Submits the trimmed player name if non-empty after trimming.
+   */
+  const handleEnterName = (inputNameValue: string) => {
+    const trimmedInputText = inputNameValue.trim();
+    if (trimmedInputText !== '') {
+      setName(trimmedInputText);
+      onEnter();
+    }
+  };
+
+  /**
+   * Handles button click events.
+   * Submits the trimmed player name if non-empty after trimming.
+   */
+  const handleButtonClick = () => {
+    const inputElement = document.getElementById('player-name-input') as HTMLInputElement;
+    handleEnterName(inputElement.value);
+  };
+
+  /**
    * Handles key down events in the input field.
    * Submits the player name if 'Enter' is pressed and the input is not empty.
    * Manages the deletion of characters using 'Backspace' or 'Delete'.
    */
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      const trimmedInputText = event.currentTarget.value.trim();
-      if (trimmedInputText !== '') {
-        setName(trimmedInputText);
-        onEnter();
-      }
+      handleEnterName(event.currentTarget.value);
     } else if (event.key === 'Backspace' || event.key === 'Delete') {
       const start = event.currentTarget.selectionStart;
       const end = event.currentTarget.selectionEnd;
@@ -53,13 +69,14 @@ export const PlayerNameInput: React.FC<PlayerNameInputProps> = ({ setName, onEnt
   return (
     <div className="player-input-section">
       <input
+        id="player-name-input"
         className="player-input-textbox"
         type="text"
         maxLength={64}
         onChange={handleNameChange}
         onKeyDown={handleKeyDown}
       />
-      <button className="game-button" onClick={onEnter}>
+      <button className="game-button" onClick={handleButtonClick}>
         Enter
       </button>
     </div>
