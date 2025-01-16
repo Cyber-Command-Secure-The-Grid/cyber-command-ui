@@ -10,7 +10,7 @@ export function GamePage() {
   const [currentDialogId, setCurrentDialogId] = useState('welcome');
   const [name, setName] = useState('');
 
-  const currentDialog = dialogMetadataEntries.find(dialog => dialog.id === currentDialogId);
+  const currentDialog = dialogMetadataEntries[currentDialogId];
 
   const handleOptionSelect = (nextDialogId: string) => {
     setCurrentDialogId(nextDialogId);
@@ -24,13 +24,16 @@ export function GamePage() {
     <>
       <h3>{GAME_TITLE}</h3>
 
-      {currentDialog ? (
-        <Dialog dialog={currentDialog} onOptionSelect={handleOptionSelect} />
-      ) : (
-        <div>
-          <p>Excellent, welcome to the team, {name}!</p>
-        </div>
-      )}
+      {
+      // ESLint doesn't know that currentDialog can be null here
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        currentDialog ? (
+          <Dialog dialog={currentDialog} onOptionSelect={handleOptionSelect} />
+        ) : (
+          <div>
+            <p>Excellent, welcome to the team, {name}!</p>
+          </div>
+        )}
       {currentDialogId === 'nameInput' && (
         <PlayerNameInput onEnter={handleEnterName} setName={setName} />
       )}
