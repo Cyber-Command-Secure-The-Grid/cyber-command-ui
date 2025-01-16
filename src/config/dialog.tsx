@@ -20,20 +20,12 @@ export const dialogMetadataEntries: DialogMetadataDictionary = {
       'I\'m Matthew, your Director of Operations.',
     ],
     options: [
-      { text: NEXT_BUTTON_TEXT, nextDialogId: 'welcomePart2' },
-    ],
-  },
-  welcomePart2: {
-    text: [
-      'We\'ve got an incredible amount of work ahead of us, from hiring the team, ' +
-        'to laying the groundwork for Cyber Command\'s first year of operations.',
-    ],
-    options: [
       { text: NEXT_BUTTON_TEXT, nextDialogId: 'nameInput' },
     ],
   },
   nameInput: {
     text: [
+      'We\'ve got an incredible amount of work ahead of us, to lay the groundwork for Cyber Command\'s first year of operations.',
       'Before we dive in, what would you like me to call you on a day-to-day basis?',
     ],
   },
