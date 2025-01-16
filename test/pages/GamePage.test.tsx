@@ -8,15 +8,22 @@ describe('GamePage', () => {
     cleanup(); // Clean up the DOM after each test
   });
 
-  it('renders the initial dialog with input textbox', () => {
+  it('renders initial dialog with Next button', () => {
     render(<GamePage />);
 
     expect(screen.getByText(/You must be our new Chief/i)).toBeInTheDocument();
-    expect(screen.getByRole('textbox')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Next/i })).toBeInTheDocument();
   });
 
-  it('renders the welcome message after entering name', () => {
+  it('allows player to click Next through dialogs and submit player name', () => {
     render(<GamePage />);
+
+    let nextButton = screen.queryByRole('button', { name: /Next/i });
+    expect(nextButton).toBeInTheDocument();
+    while (nextButton) {
+      fireEvent.click(nextButton);
+      nextButton = screen.queryByRole('button', { name: /Next/i });
+    }
 
     const input = screen.getByRole('textbox');
     fireEvent.change(input, { target: { value: 'John Doe' } });
@@ -24,18 +31,5 @@ describe('GamePage', () => {
 
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
     expect(screen.getByText(/Excellent, welcome to the team, John Doe/i)).toBeInTheDocument();
-  });
-
-  it('increments the count when the button is clicked', () => {
-    render(<GamePage />);
-    const button = screen.getByRole('button', { name: /count is/i });
-
-    expect(button).toHaveTextContent('count is 0');
-
-    fireEvent.click(button);
-    expect(button).toHaveTextContent('count is 1');
-
-    fireEvent.click(button);
-    expect(button).toHaveTextContent('count is 2');
   });
 });
