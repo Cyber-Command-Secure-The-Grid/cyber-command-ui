@@ -24,16 +24,8 @@ export function GamePage() {
     <>
       <h3>{GAME_TITLE}</h3>
 
-      {
-      // ESLint doesn't know that currentDialog can be null here
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        currentDialog ? (
-          <Dialog dialog={currentDialog} onOptionSelect={handleOptionSelect} />
-        ) : (
-          <div>
-            <p>Excellent, welcome to the team, {name}!</p>
-          </div>
-        )}
+      <Dialog dialog={currentDialog} onOptionSelect={handleOptionSelect} state={{ name }} />
+
       {currentDialogId === 'nameInput' && (
         <PlayerNameInput onEnter={handleEnterName} setName={setName} />
       )}

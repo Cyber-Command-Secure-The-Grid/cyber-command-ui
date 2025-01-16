@@ -1,5 +1,10 @@
+export interface DialogState {
+  name: string;
+}
+
 export interface DialogMetadata {
-  text: string[];
+  text?: string[];
+  dynamicText?: (state: DialogState) => string;
   options?: { text: string; nextDialogId: string }[];
 }
 
@@ -32,5 +37,7 @@ export const dialogMetadataEntries: DialogMetadataDictionary = {
       'Before we dive in, what would you like me to call you on a day-to-day basis?',
     ],
   },
-  // Add more dialogs and events here
+  nextDialogAfterNameInput: {
+    dynamicText: (state) => `Excellent, welcome to the team, ${state.name}!`,
+  },
 };

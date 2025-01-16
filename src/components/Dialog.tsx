@@ -1,24 +1,28 @@
 import React from 'react';
 
-import { DialogMetadata } from '../config/dialog';
+import { DialogMetadata, DialogState } from '../config/dialog';
 import '../styles/App.css';
 
 interface DialogProps {
   dialog: DialogMetadata;
   onOptionSelect: (nextDialogId: string) => void;
+  state?: DialogState;
 }
 
 /**
  * Renders a dialog box with one or more paragraphs of text, and a row of option buttons
  * at the bottom if the current page of dialog has options.
  */
-export const Dialog: React.FC<DialogProps> = ({ dialog, onOptionSelect }) => {
+export const Dialog: React.FC<DialogProps> = ({ dialog, onOptionSelect, state }) => {
   return (
     <div className="dialogue">
       <div className={`dialogue-text ${dialog.options ? 'padding-bottom' : ''}`}>
-        {dialog.text.map((paragraph, index) => (
+        {dialog.text?.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
+        {dialog.dynamicText && state && (
+          <p>{dialog.dynamicText(state)}</p>
+        )}
       </div>
       {dialog.options && (
         <div className="options">
