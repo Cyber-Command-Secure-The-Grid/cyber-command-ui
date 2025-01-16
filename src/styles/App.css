@@ -6,34 +6,8 @@
   width: 65%;
 }
 
-.icon-logo {
-  display: inline-block;
-  height: 16px;
-  width: 16px;
-  vertical-align: middle;
-}
-
-.icon-logo-right-side-label {
-  margin-left: 4px;
-  vertical-align: middle;
-}
-
 .card {
   padding: 2em;
-}
-
-.source-code-link {
-  color: #888;
-}
-
-.source-code-link:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-.game-button {
-  background-image: linear-gradient(to bottom, #F2F2F2, #E9E9E9);
-  border-color: #c2c2c2;
-  font-weight: 600;
 }
 
 .dialogue {
@@ -62,4 +36,30 @@
 .dialogue-container-with-input {
   display: flex;
   flex-direction: column;
+}
+
+.game-button {
+  background-image: linear-gradient(to bottom, #F2F2F2, #E9E9E9);
+  border-color: #c2c2c2;
+  font-weight: 600;
+}
+
+.icon-logo {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+}
+
+.icon-logo-right-side-label {
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.source-code-link {
+  color: #888;
+}
+
+.source-code-link:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
