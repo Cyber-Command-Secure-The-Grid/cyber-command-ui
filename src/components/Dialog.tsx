@@ -8,6 +8,10 @@ interface DialogProps {
   onOptionSelect: (nextDialogId: string) => void;
 }
 
+/**
+ * Renders a dialog box with one or more paragraphs of text, and a row of option buttons
+ * at the bottom if the current page of dialog has options.
+ */
 export const Dialog: React.FC<DialogProps> = ({ dialog, onOptionSelect }) => {
   return (
     <div className="dialogue">
