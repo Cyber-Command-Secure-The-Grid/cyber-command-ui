@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import { Dialog } from '../components/Dialog';
+import { Header } from '../components/Header';
 import { PlayerNameInput } from '../components/input/PlayerNameInput';
 import { dialogMetadataEntries } from '../config/dialog';
-import { GAME_TITLE } from '../constants/GameMetadata';
 import '../styles/App.css';
 
 export function GamePage() {
@@ -22,7 +22,7 @@ export function GamePage() {
 
   return (
     <>
-      <h3>{GAME_TITLE}</h3>
+      <Header />
 
       <Dialog dialog={currentDialog} onOptionSelect={handleOptionSelect} state={{ name }} />
 

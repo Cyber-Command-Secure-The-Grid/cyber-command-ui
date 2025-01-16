@@ -1,0 +1,13 @@
+.site-header {
+  align-items: center;
+  display: flex;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+}
+
+.site-title {
+  color: #213547;
+  font-size: 24px;
+  font-weight: 600;
+}
