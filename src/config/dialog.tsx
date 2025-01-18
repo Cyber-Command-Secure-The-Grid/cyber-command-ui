@@ -2,13 +2,12 @@ import { CharacterExpression, CharacterName } from '../constants/Images';
 import { getCharacterAvatarFileName } from '../utils/CharacterUtils';
 
 export interface DialogState {
-  name: string;
+  name?: string;
 }
 
 export interface DialogMetadata {
   avatarFileName?: string;
-  text?: string[];
-  dynamicText?: (state: DialogState) => string[];
+  text: (state: DialogState) => string[];
   options?: { text: string; nextDialogId: string }[];
 }
 
@@ -21,7 +20,7 @@ const MATTHEW_FRIENDLY_AVATAR_FILENAME: string = getCharacterAvatarFileName(Char
 export const dialogMetadataEntries: DialogMetadataDictionary = {
   welcome: {
     avatarFileName: MATTHEW_FRIENDLY_AVATAR_FILENAME,
-    text: [
+    text: () => [
       'Welcome!',
       'You must be our new Chief Information Security Officer. I\'ve been looking forward to meeting you in person.',
       'I\'m Matthew, your Director of Operations.',
@@ -32,15 +31,15 @@ export const dialogMetadataEntries: DialogMetadataDictionary = {
   },
   nameInput: {
     avatarFileName: MATTHEW_FRIENDLY_AVATAR_FILENAME,
-    text: [
+    text: () => [
       'We\'ve got an incredible amount of work ahead of us, to lay the groundwork for Cyber Command\'s first year of operations.',
       'Before we dive in, what would you like me to call you on a day-to-day basis?',
     ],
   },
   nextDialogAfterNameInput: {
     avatarFileName: MATTHEW_FRIENDLY_AVATAR_FILENAME,
-    dynamicText: (state) => [
-      `Excellent, welcome to the team, ${state.name}!`,
+    text: (state) => [
+      `Excellent, welcome to the team, ${state.name ?? 'Guest'}!`,
       'Let\'s get you started with your console.'
     ],
   },

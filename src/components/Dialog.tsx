@@ -6,7 +6,7 @@ import '../styles/App.css';
 interface DialogProps {
   dialog: DialogMetadata;
   onOptionSelect: (nextDialogId: string) => void;
-  state?: DialogState;
+  state: DialogState;
 }
 
 /**
@@ -25,10 +25,7 @@ export const Dialog: React.FC<DialogProps> = ({ dialog, onOptionSelect, state })
         />
       )}
       <div className={`dialogue-text ${dialog.options ? 'padding-bottom' : ''}`}>
-        {dialog.text?.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
-        {dialog.dynamicText && state && dialog.dynamicText(state).map((paragraph, index) => (
+        {dialog.text(state).map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
       </div>
