@@ -12,6 +12,7 @@ Cyber Command is a roleplaying game in which you're tasked with building a small
 
 * [React](https://react.dev), a popular JavaScript/TypeScript web app framework
 * [Vite](https://vite.dev), a build tool that optimizes production builds and provides instant updates to local servers without reloading pages or wiping application state
+* [Vitest](https://vitest.dev), a modern JavaScript/TypeScript test framework powered by Vite, compatible with Jest APIs with performance improvements over Jest
 
 ## Third party services used
 
