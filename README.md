@@ -2,7 +2,7 @@
 
 This repository contains the frontend code for a web app based game called Cyber Command.
 
-Cyber Command is a roleplaying game in which you are tasked with rebuilding a small nation's cyber security team.
+Cyber Command is a roleplaying game in which you're tasked with building a small nation's cyber security team.
 
 ## Project resources
 
