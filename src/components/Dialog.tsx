@@ -28,9 +28,9 @@ export const Dialog: React.FC<DialogProps> = ({ dialog, onOptionSelect, state })
         {dialog.text?.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
-        {dialog.dynamicText && state && (
-          <p>{dialog.dynamicText(state)}</p>
-        )}
+        {dialog.dynamicText && state && dialog.dynamicText(state).map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
       </div>
       {dialog.options && (
         <div className="options">

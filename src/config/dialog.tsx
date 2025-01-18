@@ -8,7 +8,7 @@ export interface DialogState {
 export interface DialogMetadata {
   avatarFileName?: string;
   text?: string[];
-  dynamicText?: (state: DialogState) => string;
+  dynamicText?: (state: DialogState) => string[];
   options?: { text: string; nextDialogId: string }[];
 }
 
@@ -39,6 +39,9 @@ export const dialogMetadataEntries: DialogMetadataDictionary = {
   },
   nextDialogAfterNameInput: {
     avatarFileName: MATTHEW_FRIENDLY_AVATAR_FILENAME,
-    dynamicText: (state) => `Excellent, welcome to the team, ${state.name}!`,
+    dynamicText: (state) => [
+      `Excellent, welcome to the team, ${state.name}!`,
+      'Let\'s get you started with your console.'
+    ],
   },
 };
