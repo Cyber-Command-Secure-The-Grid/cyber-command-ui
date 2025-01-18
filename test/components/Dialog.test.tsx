@@ -67,11 +67,11 @@ describe('Dialog component', () => {
     expect(onOptionSelect).toHaveBeenCalledWith('option-1');
   });
 
-  it('renders "Guest" for player name in nextDialogAfterNameInput when state.name is undefined', () => {
+  it('renders "Chief" for player name in nextDialogAfterNameInput when state.name is undefined', () => {
     const dialogMetadataAfterNameInput: DialogMetadata = dialogMetadataEntries.nextDialogAfterNameInput;
     renderDialog(dialogMetadataAfterNameInput, {});
 
-    expect(screen.getByText('Excellent, welcome to the team, Guest!')).toBeInTheDocument();
+    expect(screen.getByText('Excellent, welcome to the team, Chief!')).toBeInTheDocument();
     expect(screen.getByText('Let\'s get you started with your console.')).toBeInTheDocument();
   });
 });
