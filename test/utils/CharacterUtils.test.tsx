@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { describe, expect, it } from 'vitest';
 
-import { CharacterExpression, CharacterName, getCharacterAvatarFileName } from '../../src/constants/Images';
+import { CharacterExpression, CharacterName } from '../../src/constants/Images';
+import { getCharacterAvatarFileName } from '../../src/utils/CharacterUtils';
 
 const characterAvatarsPath = path.resolve(__dirname, '../../src/assets/CharacterAvatars');
 
