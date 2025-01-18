@@ -26,8 +26,13 @@ describe('GamePage', () => {
     expect(homeLink).toHaveAttribute('href', '/');
   });
 
-  it('renders initial dialog with Next button', () => {
+  it('renders starting dialog with expected NPC avatar, text, and Next button', () => {
     renderGamePage();
+
+    const npcAvatar = screen.getByTestId('npc-avatar');
+    expect(npcAvatar).toBeInTheDocument();
+    const src = npcAvatar.getAttribute('src');
+    expect(src).toBe('/src/assets/CharacterAvatars/ProfessionalManGlassesDarkGreyShirtFriendly.svg');
 
     expect(screen.getByText(/You must be our new Chief/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Next/i })).toBeInTheDocument();

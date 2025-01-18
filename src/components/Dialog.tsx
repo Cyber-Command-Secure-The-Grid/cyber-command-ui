@@ -16,6 +16,14 @@ interface DialogProps {
 export const Dialog: React.FC<DialogProps> = ({ dialog, onOptionSelect, state }) => {
   return (
     <div className="dialogue">
+      {dialog.avatarFileName && (
+        <img
+          className="dialogue-avatar"
+          data-testid="npc-avatar"
+          src={`/src/assets/CharacterAvatars/${dialog.avatarFileName}`}
+          alt="Speaking character avatar"
+        />
+      )}
       <div className={`dialogue-text ${dialog.options ? 'padding-bottom' : ''}`}>
         {dialog.text?.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
