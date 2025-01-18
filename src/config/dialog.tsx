@@ -17,6 +17,10 @@ const NEXT_BUTTON_TEXT = 'Next';
 
 const MATTHEW_FRIENDLY_AVATAR_FILENAME: string = getCharacterAvatarFileName(CharacterName.MATTHEW, CharacterExpression.FRIENDLY);
 
+/**
+ * Dictionary representation of all dialog in the game with associated
+ * avatars, text based on current game state, and option buttons.
+ */
 export const dialogMetadataEntries: DialogMetadataDictionary = {
   welcome: {
     avatarFileName: MATTHEW_FRIENDLY_AVATAR_FILENAME,
