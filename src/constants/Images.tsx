@@ -9,21 +9,16 @@ export enum CharacterName {
   MATTHEW = 'Matthew',
 }
 
-const CharacterAvatarFileNamePrefixes: Map<CharacterName, string> = new Map<CharacterName, string>([
-  [CharacterName.MATTHEW, 'ProfessionalManGlassesDarkGreyShirt'],
-]);
+const CharacterAvatarFileNamePrefixes: Record<CharacterName, string> = {
+  [CharacterName.MATTHEW]: 'ProfessionalManGlassesDarkGreyShirt',
+};
 
-export type CharacterNameAndExpression = [CharacterName, CharacterExpression];
-
-export const CharacterAvatarFileNames: Map<CharacterNameAndExpression, string> = new Map<CharacterNameAndExpression, string>();
-
-for (const name of Object.values(CharacterName)) {
-  for (const expression of Object.values(CharacterExpression)) {
-    const fileNamePrefix: string | undefined = CharacterAvatarFileNamePrefixes.get(name);
-
-    if (fileNamePrefix) {
-      const avatarFileName = `${fileNamePrefix}${expression}.svg`;
-      CharacterAvatarFileNames.set([name, expression], avatarFileName);
-    }
-  }
+/**
+ * Returns filename for a character avatar given their name and expression.
+ *
+ * @returns The filename of the character avatar, e.g. "ProfessionalManGlassesDarkGreyShirtConcerned.svg"
+ */
+export function getCharacterAvatarFileName(name: CharacterName, expression: CharacterExpression): string {
+  const fileNamePrefix: string = CharacterAvatarFileNamePrefixes[name];
+  return `${fileNamePrefix}${expression}.svg`;
 }
