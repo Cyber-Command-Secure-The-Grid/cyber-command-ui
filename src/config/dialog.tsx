@@ -37,7 +37,6 @@ export const dialogMetadataEntries: DialogMetadataDictionary = {
     ],
     options: [{
       text: NEXT_BUTTON_TEXT,
-      nextDialogId: '',
       nextSecurityConsoleId: 'starterSecurityConsole'
     }]
   },

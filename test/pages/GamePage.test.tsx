@@ -1,9 +1,12 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import fs from 'fs';
+import path from 'path';
 import { MemoryRouter } from 'react-router-dom';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import { GAME_TITLE } from '../../src/constants/GameMetadata';
 import { GamePage } from '../../src/pages/GamePage';
+import { BUTTON_NAME, clickButton, queryButton } from '../testUtils/TestButtonInteractions';
 
 function renderGamePage() {
   return render(
@@ -11,6 +14,18 @@ function renderGamePage() {
       <GamePage />
     </MemoryRouter>
   );
+}
+
+function validateRenderedSecurityConsole() {
+  const securityConsoleImage = screen.getByAltText('Security Console');
+  expect(securityConsoleImage).toBeInTheDocument();
+
+  const securityConsoleImageSrc = securityConsoleImage.getAttribute('src');
+  if (!securityConsoleImageSrc) fail('Security console image src is undefined');
+
+  const rootPath: string = path.resolve(__dirname, '../..');
+  const filePath: string = path.join(rootPath, securityConsoleImageSrc);
+  expect(fs.existsSync(filePath)).toBe(true);
 }
 
 describe('GamePage', () => {
@@ -35,24 +50,27 @@ describe('GamePage', () => {
     expect(src).toBe('/src/assets/CharacterAvatars/ProfessionalManGlassesDarkGreyShirtFriendly.svg');
 
     expect(screen.getByText(/You must be our new Chief/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Next/i })).toBeInTheDocument();
+    expect(queryButton(BUTTON_NAME.NEXT)).toBeInTheDocument();
   });
 
-  it('allows player to click Next through dialogs and submit player name', () => {
+  it('allows player to click through dialogs, submit name, and view console', () => {
     renderGamePage();
 
-    let nextButton = screen.queryByRole('button', { name: /Next/i });
+    let nextButton = queryButton(BUTTON_NAME.NEXT);
     expect(nextButton).toBeInTheDocument();
     while (nextButton) {
       fireEvent.click(nextButton);
-      nextButton = screen.queryByRole('button', { name: /Next/i });
+      nextButton = queryButton(BUTTON_NAME.NEXT);
     }
 
     const input = screen.getByRole('textbox');
     fireEvent.change(input, { target: { value: 'John Doe' } });
-    fireEvent.click(screen.getByRole('button', { name: /enter/i }));
+    clickButton(BUTTON_NAME.ENTER);
 
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
     expect(screen.getByText(/Excellent, welcome to the team, John Doe/i)).toBeInTheDocument();
+
+    clickButton(BUTTON_NAME.NEXT);
+    validateRenderedSecurityConsole();
   });
 });
