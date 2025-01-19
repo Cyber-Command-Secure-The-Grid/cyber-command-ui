@@ -45,8 +45,8 @@ describe('SecurityConsole', () => {
     [Sector.COMMUNICATIONS]: SecurityMaturityLevel.NOVICE,
     [Sector.ENERGY]: SecurityMaturityLevel.INTERMEDIATE,
     [Sector.FINANCIAL_SERVICES]: SecurityMaturityLevel.ADVANCED,
-    [Sector.HEALTHCARE]: SecurityMaturityLevel.INADEQUATE,
-    [Sector.TRANSPORTATION]: SecurityMaturityLevel.NOVICE,
+    [Sector.HEALTHCARE]: SecurityMaturityLevel.UNKNOWN,
+    [Sector.TRANSPORTATION]: SecurityMaturityLevel.INADEQUATE,
   };
 
   it('renders correctly with given props', () => {

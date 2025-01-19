@@ -1,4 +1,5 @@
 export enum SecurityMaturityLevel {
+  UNKNOWN = 'Unknown',
   INADEQUATE = 'Woefully Inadequate',
   NOVICE = 'Novice',
   INTERMEDIATE = 'Intermediate',
