@@ -1,17 +1,6 @@
 import { CharacterExpression, CharacterName } from '../constants/Images';
+import { DialogMetadataDictionary } from '../types/Dialog';
 import { getCharacterAvatarFileName } from '../utils/CharacterUtils';
-
-export interface DialogState {
-  name?: string;
-}
-
-export interface DialogMetadata {
-  avatarFileName?: string;
-  text: (state: DialogState) => string[];
-  options?: { text: string; nextDialogId: string }[];
-}
-
-export type DialogMetadataDictionary = Record<string, DialogMetadata>;
 
 const NEXT_BUTTON_TEXT = 'Next';
 
@@ -46,5 +35,10 @@ export const dialogMetadataEntries: DialogMetadataDictionary = {
       `Excellent, welcome to the team, ${state.name ?? 'Chief'}!`,
       'Let\'s get you started with your console.'
     ],
+    options: [{
+      text: NEXT_BUTTON_TEXT,
+      nextDialogId: '',
+      nextSecurityConsoleId: 'starterSecurityConsole'
+    }]
   },
 };

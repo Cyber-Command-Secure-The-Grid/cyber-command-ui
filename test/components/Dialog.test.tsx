@@ -2,7 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 
 import { Dialog } from '../../src/components/Dialog';
-import { DialogMetadata, dialogMetadataEntries, DialogState } from '../../src/config/dialog';
+import { dialogMetadataEntries, } from '../../src/config/dialog';
+import { DialogMetadata, DialogState } from '../../src/types/Dialog';
 
 const dialogMetadataWithoutOptions: DialogMetadata = {
   text: () => ['Hello, world!', 'This is a test dialog.'],
@@ -64,7 +65,9 @@ describe('Dialog component', () => {
     fireEvent.click(optionButton);
 
     expect(onOptionSelect).toHaveBeenCalledTimes(1);
-    expect(onOptionSelect).toHaveBeenCalledWith('option-1');
+    expect(onOptionSelect).toHaveBeenCalledWith({
+      nextDialogId: 'option-1'
+    });
   });
 
   it('renders "Chief" for player name in nextDialogAfterNameInput when state.name is undefined', () => {

@@ -1,13 +1,8 @@
 import React from 'react';
 
-import { DialogMetadata, DialogState } from '../config/dialog';
+import { DialogProps } from '../types/Dialog';
+import { DialogNextButton } from './DialogNextButton';
 import '../styles/App.css';
-
-interface DialogProps {
-  dialog: DialogMetadata;
-  onOptionSelect: (nextDialogId: string) => void;
-  state: DialogState;
-}
 
 /**
  * Renders a dialog box with one or more paragraphs of text, and a row of option buttons
@@ -32,9 +27,7 @@ export const Dialog: React.FC<DialogProps> = ({ dialog, onOptionSelect, state })
       {dialog.options && (
         <div className="options">
           {dialog.options.map((option, index) => (
-            <button className="dialogue-next-button" key={index} onClick={() => onOptionSelect(option.nextDialogId)}>
-              {option.text}
-            </button>
+            DialogNextButton(index, onOptionSelect, option)
           ))}
         </div>
       )}
