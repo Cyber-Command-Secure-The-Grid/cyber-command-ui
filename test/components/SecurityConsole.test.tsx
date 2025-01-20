@@ -2,11 +2,13 @@ import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { SecurityConsole } from '../../src/components/SecurityConsole';
+import { CharacterExpression, CharacterName } from '../../src/constants/Images';
+import { BASE_URL_PATH } from '../../src/constants/UrlPaths';
 import { IncidentLevel, IncidentReport } from '../../src/types/IncidentReport';
 import { Message } from '../../src/types/Message';
 import { Sector, SectorSecurityLevels, SecurityMaturityLevel } from '../../src/types/SecurityLevel';
 import { getCharacterAvatarFileName } from '../../src/utils/CharacterUtils';
-import { CharacterExpression, CharacterName } from '../../src/constants/Images';
+import { DeviceType, mockWindow } from '../testUtils/TestWindow';
 
 describe('SecurityConsole', () => {
   const mockAlerts: IncidentReport[] = [
@@ -49,7 +51,9 @@ describe('SecurityConsole', () => {
     [Sector.TRANSPORTATION]: SecurityMaturityLevel.INADEQUATE,
   };
 
-  it('renders correctly with given props', () => {
+  it('renders correctly for desktop', () => {
+    mockWindow(DeviceType.DESKTOP);
+
     const { getByAltText } = render(
       <SecurityConsole
         alerts={mockAlerts}
@@ -58,6 +62,24 @@ describe('SecurityConsole', () => {
       />
     );
 
-    expect(getByAltText('Security Console')).toBeInTheDocument();
+    const img = getByAltText('Security Console');
+    expect(img).toBeInTheDocument();
+    expect(img).toHaveAttribute('src', `${BASE_URL_PATH}/images/SecurityConsole/SecurityConsole_DesktopMockup.svg`);
+  });
+
+  it('renders correctly for mobile', () => {
+    mockWindow(DeviceType.MOBILE);
+
+    const { getByAltText } = render(
+      <SecurityConsole
+        alerts={mockAlerts}
+        messages={mockMessages}
+        sectorSecurityLevels={mockSectorSecurityLevels}
+      />
+    );
+
+    const img = getByAltText('Security Console');
+    expect(img).toBeInTheDocument();
+    expect(img).toHaveAttribute('src', `${BASE_URL_PATH}/images/SecurityConsole/SecurityConsole_MobileMockup.svg`);
   });
 });
