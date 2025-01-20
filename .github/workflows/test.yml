@@ -4,6 +4,8 @@ name: Build and test
 on:
   pull_request:
   push:
+    branches-ignore:
+      - gh-pages
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
