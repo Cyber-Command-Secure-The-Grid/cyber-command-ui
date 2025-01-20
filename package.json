@@ -7,7 +7,6 @@
     "clean": "rm -rf coverage dist tsconfig.tsbuildinfo",
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "deploy": "gh-pages -d dist -r https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/Cyber-Command-Secure-The-Grid/cyber-command-ui.git",
     "lint": "eslint . --fix",
     "predeploy": "npm run build",
     "preview": "vite preview",
