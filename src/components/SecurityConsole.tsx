@@ -35,16 +35,15 @@ const mobileSecurityConsoleImageSrc = `${BASE_URL_PATH}/images/SecurityConsole/S
 export const SecurityConsole: React.FC<SecurityConsoleProps> = ({ alerts, messages, sectorSecurityLevels }) => {
   const isMobile: boolean = useDeviceType();
 
-  // Preload the security console image in browser cache
-  // so rendering an image with the same src is faster
+  // Preload security console images in browser cache
+  // so rendering images is faster
   useEffect(() => {
-    const mockSecurityConsoleImage = new Image();
-    if (isMobile) {
-      mockSecurityConsoleImage.src = mobileSecurityConsoleImageSrc;
-    } else {
-      mockSecurityConsoleImage.src = desktopSecurityConsoleImageSrc;
-    }
-  }, [isMobile]);
+    const mockMobileSecurityConsoleImage = new Image();
+    mockMobileSecurityConsoleImage.src = mobileSecurityConsoleImageSrc;
+
+    const mockDesktopSecurityConsoleImage = new Image();
+    mockDesktopSecurityConsoleImage.src = desktopSecurityConsoleImageSrc;
+  }, []);
 
   console.log(alerts, messages, sectorSecurityLevels);
 
