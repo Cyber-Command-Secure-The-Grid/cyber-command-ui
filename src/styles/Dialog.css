@@ -39,3 +39,16 @@
   bottom: 20px;
   right: 20px;
 }
+
+/* Overrides for mobile */
+@media only screen and (max-device-width: 480px) {
+  .dialogue {
+    color: #213547;
+    max-width: 90%;
+  }
+
+  .dialogue .dialogue-avatar {
+    height: 100px;
+    width: 100px;
+  }
+}
