@@ -11,6 +11,19 @@ npm run build && npm run test
 
 * Run `npm run dev` to run a local server, and visit the URL linked in the terminal output to test your code changes.
 
+## Locally testing mobile usability
+
+### Mozilla Firefox
+* Open Firefox and navigate to the webpage you want to test.
+* Press CTRL+SHIFT+M to switch between desktop and mobile views.
+* In mobile view, switch between device presets while navigating through the game to validate it renders well across devices, and update styles as needed to resolve display issues.
+
+### Google Chrome
+* Open Chrome and navigate to the webpage you want to test.
+* Press CTRL+SHIFT+I to open Developer Tools.
+* Press CTRL+SHIFT+M to toggle the device toolbar, which allows you to switch between desktop and mobile views.
+* In mobile view, switch between device presets while navigating through the game to validate it renders well across devices, and update styles as needed to resolve display issues.
+
 ## Useful commands
 
 * `npm run build` - generate optimized production build
