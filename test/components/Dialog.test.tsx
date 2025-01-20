@@ -74,7 +74,7 @@ describe('Dialog component', () => {
     const dialogMetadataAfterNameInput: DialogMetadata = dialogMetadataEntries.nextDialogAfterNameInput;
     renderDialog(dialogMetadataAfterNameInput, {});
 
-    expect(screen.getByText('Excellent, welcome to the team, Chief!')).toBeInTheDocument();
+    expect(screen.getByText('Welcome to the team, Chief!')).toBeInTheDocument();
     expect(screen.getByText('Let\'s get you started with your console.')).toBeInTheDocument();
   });
 });

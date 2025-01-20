@@ -32,7 +32,7 @@ export const dialogMetadataEntries: DialogMetadataDictionary = {
   nextDialogAfterNameInput: {
     avatarFileName: MATTHEW_FRIENDLY_AVATAR_FILENAME,
     text: (state) => [
-      `Excellent, welcome to the team, ${state.name ?? 'Chief'}!`,
+      `Welcome to the team, ${state.name ?? 'Chief'}!`,
       'Let\'s get you started with your console.'
     ],
     options: [{

@@ -69,7 +69,7 @@ describe('GamePage', () => {
     clickButton(BUTTON_NAME.ENTER);
 
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
-    expect(screen.getByText(/Excellent, welcome to the team, John Doe/i)).toBeInTheDocument();
+    expect(screen.getByText(/Welcome to the team, John Doe/i)).toBeInTheDocument();
 
     clickButton(BUTTON_NAME.NEXT);
     validateRenderedSecurityConsole();
