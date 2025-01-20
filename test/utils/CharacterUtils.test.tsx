@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { CharacterExpression, CharacterName } from '../../src/constants/Images';
 import { getCharacterAvatarFileName } from '../../src/utils/CharacterUtils';
 
-const characterAvatarsPath = path.resolve(__dirname, '../../src/assets/CharacterAvatars');
+const characterAvatarsPath = path.resolve(__dirname, '../../public/images/CharacterAvatars');
 
 describe('getCharacterAvatarFileName', () => {
   it('provides valid file paths for every character avatar', () => {

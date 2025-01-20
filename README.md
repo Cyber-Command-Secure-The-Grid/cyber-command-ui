@@ -1,4 +1,4 @@
-# cyber-command-ui
+# cyber-command-ui &middot; [![Build and test](https://github.com/Cyber-Command-Secure-The-Grid/cyber-command-ui/actions/workflows/test.yml/badge.svg)](https://github.com/Cyber-Command-Secure-The-Grid/cyber-command-ui/actions/workflows/test.yml)
 
 This repository contains the frontend code for a web app based game called Cyber Command.
 

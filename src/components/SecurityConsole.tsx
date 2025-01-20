@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { IncidentReport } from '../types/IncidentReport';
 import { Message } from '../types/Message';
 import { Sector, SectorSecurityLevels, SecurityMaturityLevel } from '../types/SecurityLevel';
+import { BASE_URL_PATH } from '../constants/UrlPaths';
 
 export const DEFAULT_SECTOR_SECURITY_LEVELS: SectorSecurityLevels = {
   [Sector.COMMUNICATIONS]: SecurityMaturityLevel.UNKNOWN,
@@ -18,7 +19,7 @@ interface SecurityConsoleProps {
   sectorSecurityLevels: SectorSecurityLevels
 }
 
-const mockSecurityConsoleImageFilePath = '/src/assets/SecurityConsole/SecurityConsole_DesktopMockup.svg';
+const mockSecurityConsoleImageFilePath = `${BASE_URL_PATH}/images/SecurityConsole/SecurityConsole_DesktopMockup.svg`;
 
 /**
  * Renders the security console dashboard which the player

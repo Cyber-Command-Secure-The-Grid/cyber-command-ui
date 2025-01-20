@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import cyberCommandLogo from '../assets/CyberCommandLogo_248x248.png';
-import githubLogo from '../assets/icon-github.svg';
+import cyberCommandLogo from '/images/CyberCommandLogo_248x248.png';
+import githubLogo from '/images/icon-github.svg';
 import { GAME_TAGLINE, GAME_TITLE } from '../constants/GameMetadata';
 import { GAME_URL_PATH } from '../constants/UrlPaths';
 import '../styles/App.css';
