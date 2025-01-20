@@ -1,15 +1,15 @@
-import { JSDOM } from 'jsdom';
 import { expect } from 'vitest';
 import * as matchers from '@testing-library/jest-dom/matchers';
 
-// Extend Vitest's expect with @testing-library/jest-dom matchers
+import { DeviceType, mockWindow } from './testUtils/TestWindow';
+
+// Extend Vitest's expect with @testing-library/jest-dom matchers.
 expect.extend(matchers);
 
-// Update the global window to use the correct base URL for tests
-const base = '/cyber-command-ui';
-const jsdom = new JSDOM('', { url: `http://localhost${base}/` });
-const { window } = jsdom;
-
-global.window = window as unknown as Window & typeof globalThis;
-global.document = window.document;
-global.location = window.location;
+/**
+ * Mock the global window to imitate a desktop browser environment.
+ *
+ * Call mockWindow(DeviceType.DESKTOP) in unit tests to test
+ * mobile-specific behaviour.
+ */
+mockWindow(DeviceType.DESKTOP);

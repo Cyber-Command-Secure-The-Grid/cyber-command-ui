@@ -45,7 +45,7 @@
  * Shrink avatar images and render dialog text below them
  * to make it easier to read on the limited screen space
  */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
   .dialogue {
     color: #213547;
     flex-direction: column;
