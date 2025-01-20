@@ -80,6 +80,6 @@ describe('SecurityConsole', () => {
 
     const img = getByAltText('Security Console');
     expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute('src', `${BASE_URL_PATH}/images/SecurityConsole/SecurityConsole_MobileMockup.svg`);
+    expect(img).toHaveAttribute('src', `${BASE_URL_PATH}/images/SecurityConsole/SecurityConsole_MobileMockup.png`);
   });
 });

@@ -22,7 +22,7 @@ interface SecurityConsoleProps {
 
 // Mockup images that will be replaced with dynamic content
 const desktopSecurityConsoleImageSrc = `${BASE_URL_PATH}/images/SecurityConsole/SecurityConsole_DesktopMockup.svg`;
-const mobileSecurityConsoleImageSrc = `${BASE_URL_PATH}/images/SecurityConsole/SecurityConsole_MobileMockup.svg`;
+const mobileSecurityConsoleImageSrc = `${BASE_URL_PATH}/images/SecurityConsole/SecurityConsole_MobileMockup.png`;
 
 /**
  * Renders the security console dashboard which the player
