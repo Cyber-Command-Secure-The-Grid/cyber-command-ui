@@ -6,13 +6,6 @@
   width: 65%;
 }
 
-/* Mobile overrides for how the app displays on small screens */
-@media only screen and (max-device-width: 480px) {
-  #root {
-    width: 90%;
-  }
-}
-
 .card {
   padding: 2em;
 }
@@ -42,4 +35,32 @@
 
 .source-code-link:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Mobile overrides for how the app displays on small screens */
+@media only screen and (max-device-width: 480px) {
+  #root {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 1em;
+  }
+
+  .logo {
+    height: 150px;
+    width: 150px;
+  }
 }
