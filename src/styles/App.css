@@ -6,6 +6,13 @@
   width: 65%;
 }
 
+/* Mobile overrides for how the app displays on small screens */
+@media only screen and (max-device-width: 480px) {
+  #root {
+    width: 90%;
+  }
+}
+
 .card {
   padding: 2em;
 }
@@ -13,6 +20,7 @@
 .game-button {
   background-image: linear-gradient(to bottom, #F2F2F2, #E9E9E9);
   border-color: #c2c2c2;
+  color: #213547;
   font-weight: 600;
 }
 

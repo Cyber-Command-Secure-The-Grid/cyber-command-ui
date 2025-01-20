@@ -40,15 +40,25 @@
   right: 20px;
 }
 
-/* Overrides for mobile */
+/** Mobile display overrides
+ *
+ * Shrink avatar images and render dialog text below them
+ * to make it easier to read on the limited screen space
+ */
 @media only screen and (max-device-width: 480px) {
   .dialogue {
     color: #213547;
+    flex-direction: column;
     max-width: 90%;
+    width: 90%;
   }
 
   .dialogue .dialogue-avatar {
     height: 100px;
     width: 100px;
+  }
+
+  .dialogue .dialogue-text {
+    margin-top: 5px;
   }
 }
