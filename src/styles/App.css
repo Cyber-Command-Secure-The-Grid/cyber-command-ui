@@ -10,53 +10,6 @@
   padding: 2em;
 }
 
-.dialogue {
-  align-items: flex-start;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  line-height: 1.75;
-  margin-top: 20px;
-  max-width: 800px;
-  padding: 20px;
-  position: relative;
-  text-align: left;
-  word-wrap: break-word;
-}
-
-.dialogue .padding-bottom {
-  padding-bottom: 50px;
-}
-
-.dialogue .dialogue-avatar {
-  height: 200px;
-  /**
-   * Since the avatar images already have empty buffer space around them,
-   * we want to place the avatars and the very top left of the dialogue
-   * component, and offset the parent dialogue class' padding.
-   *
-   * We keep a margin on the right side to maintain space between the
-   * avatar and their text.
-   */
-  margin-left: -20px;
-  margin-right: 20px;
-  margin-top: -20px;
-  width: 200px;
-}
-
-.dialogue .options {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-}
-
-.dialogue-container-with-input {
-  display: flex;
-  flex-direction: column;
-}
-
 .game-button {
   background-image: linear-gradient(to bottom, #F2F2F2, #E9E9E9);
   border-color: #c2c2c2;

@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { BASE_URL_PATH } from '../constants/UrlPaths';
 import { DialogProps } from '../types/Dialog';
 import { DialogNextButton } from './DialogNextButton';
-import '../styles/App.css';
-import { BASE_URL_PATH } from '../constants/UrlPaths';
+import '../styles/Dialog.css';
 
 /**
  * Renders a dialog box with one or more paragraphs of text, and a row of option buttons
