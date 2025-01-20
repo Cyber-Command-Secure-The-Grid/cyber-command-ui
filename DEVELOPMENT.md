@@ -2,7 +2,7 @@
 
 * To check if you already have NPM installed, run `npm --version`.  If this command is not found, [install NPM and Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/).
 * Run `node --version` to check your currently installed Node version.  If earlier than v22, update to Node v22 using your preferred Node version manager or installer.
-* Run the following to set up your local project:
+* Run the following to set up your local project and validate it builds successfully:
 
 ```sh
 npm install
