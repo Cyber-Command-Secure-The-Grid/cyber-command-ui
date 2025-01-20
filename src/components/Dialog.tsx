@@ -3,6 +3,7 @@ import React from 'react';
 import { DialogProps } from '../types/Dialog';
 import { DialogNextButton } from './DialogNextButton';
 import '../styles/App.css';
+import { BASE_URL_PATH } from '../constants/UrlPaths';
 
 /**
  * Renders a dialog box with one or more paragraphs of text, and a row of option buttons
@@ -15,7 +16,7 @@ export const Dialog: React.FC<DialogProps> = ({ dialog, onOptionSelect, state })
         <img
           className="dialogue-avatar"
           data-testid="npc-avatar"
-          src={`/src/assets/CharacterAvatars/${dialog.avatarFileName}`}
+          src={`${BASE_URL_PATH}/src/assets/CharacterAvatars/${dialog.avatarFileName}`}
           alt="Speaking character avatar"
         />
       )}

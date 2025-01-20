@@ -10,7 +10,7 @@ const mockGamePageText = 'Mock game page';
 
 function renderHomePage() {
   return render(
-    <MemoryRouter initialEntries={['/']}>
+    <MemoryRouter basename={HOME_URL_PATH} initialEntries={['/']}>
       <Routes>
         <Route path={HOME_URL_PATH} element={<HomePage />} />
         <Route path={GAME_URL_PATH} element={<div>{mockGamePageText}</div>} />

@@ -5,12 +5,13 @@ import { MemoryRouter } from 'react-router-dom';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import { GAME_TITLE } from '../../src/constants/GameMetadata';
+import { BASE_URL_PATH, HOME_URL_PATH } from '../../src/constants/UrlPaths';
 import { GamePage } from '../../src/pages/GamePage';
 import { BUTTON_NAME, clickButton, queryButton } from '../testUtils/TestButtonInteractions';
 
 function renderGamePage() {
   return render(
-    <MemoryRouter>
+    <MemoryRouter basename={HOME_URL_PATH}>
       <GamePage />
     </MemoryRouter>
   );
@@ -23,8 +24,8 @@ function validateRenderedSecurityConsole() {
   const securityConsoleImageSrc = securityConsoleImage.getAttribute('src');
   if (!securityConsoleImageSrc) fail('Security console image src is undefined');
 
-  const rootPath: string = path.resolve(__dirname, '../..');
-  const filePath: string = path.join(rootPath, securityConsoleImageSrc);
+  const rootPath: string = path.resolve(__dirname, '../../');
+  const filePath: string = path.join(rootPath, securityConsoleImageSrc.replace(/cyber-command-ui\//, ''));
   expect(fs.existsSync(filePath)).toBe(true);
 }
 
@@ -47,7 +48,7 @@ describe('GamePage', () => {
     const npcAvatar = screen.getByTestId('npc-avatar');
     expect(npcAvatar).toBeInTheDocument();
     const src = npcAvatar.getAttribute('src');
-    expect(src).toBe('/src/assets/CharacterAvatars/ProfessionalManGlassesDarkGreyShirtFriendly.svg');
+    expect(src).toBe(`${BASE_URL_PATH}/src/assets/CharacterAvatars/ProfessionalManGlassesDarkGreyShirtFriendly.svg`);
 
     expect(screen.getByText(/You must be our new Chief/i)).toBeInTheDocument();
     expect(queryButton(BUTTON_NAME.NEXT)).toBeInTheDocument();
