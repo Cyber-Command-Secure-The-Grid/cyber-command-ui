@@ -1,4 +1,4 @@
-# cyber-command-ui &middot; [![Deploy to GitHub Pages](https://github.com/Cyber-Command-Secure-The-Grid/cyber-command-ui/actions/workflows/deployGitHubPages.yml/badge.svg)](https://github.com/Cyber-Command-Secure-The-Grid/cyber-command-ui/actions/workflows/deployGitHubPages.yml)
+# cyber-command-ui &middot; [![Build and test](https://github.com/Cyber-Command-Secure-The-Grid/cyber-command-ui/actions/workflows/test.yml/badge.svg)](https://github.com/Cyber-Command-Secure-The-Grid/cyber-command-ui/actions/workflows/test.yml) [![Deploy to GitHub Pages](https://github.com/Cyber-Command-Secure-The-Grid/cyber-command-ui/actions/workflows/deployGitHubPages.yml/badge.svg)](https://github.com/Cyber-Command-Secure-The-Grid/cyber-command-ui/actions/workflows/deployGitHubPages.yml)
 
 This repository contains the frontend code for a web app based game called Cyber Command.
 
