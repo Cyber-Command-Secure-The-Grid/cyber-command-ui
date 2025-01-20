@@ -26,7 +26,7 @@ export const dialogMetadataEntries: DialogMetadataDictionary = {
     avatarFileName: MATTHEW_FRIENDLY_AVATAR_FILENAME,
     text: () => [
       'We\'ve got an incredible amount of work ahead of us for Cyber Command\'s first year of operation.',
-      'Before we dive in, what would you like me to call you on a day-to-day basis?',
+      'Before we dive in, what should I call you on a day-to-day basis?',
     ],
   },
   nextDialogAfterNameInput: {
