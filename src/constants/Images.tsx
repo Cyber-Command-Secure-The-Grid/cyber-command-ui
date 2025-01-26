@@ -8,7 +8,3 @@ export enum CharacterExpression {
 export enum CharacterName {
   MATTHEW = 'Matthew',
 }
-
-export const CharacterAvatarFileNamePrefixes: Record<CharacterName, string> = {
-  [CharacterName.MATTHEW]: 'ProfessionalManGlassesDarkGreyShirt',
-};

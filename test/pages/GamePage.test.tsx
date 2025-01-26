@@ -48,7 +48,7 @@ describe('GamePage', () => {
     const npcAvatar = screen.getByTestId('npc-avatar');
     expect(npcAvatar).toBeInTheDocument();
     const src = npcAvatar.getAttribute('src');
-    expect(src).toBe(`${BASE_URL_PATH}/images/CharacterAvatars/ProfessionalManGlassesDarkGreyShirtFriendly.svg`);
+    expect(src).toBe(`${BASE_URL_PATH}/images/CharacterAvatars/MatthewFriendly.svg`);
 
     expect(screen.getByText(/You must be our new Chief/i)).toBeInTheDocument();
     expect(queryButton(BUTTON_NAME.NEXT)).toBeInTheDocument();
