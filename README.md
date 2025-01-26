@@ -6,6 +6,7 @@ Cyber Command is a roleplaying game in which you're tasked with building a small
 
 ## Project resources
 
+* [Website](https://cyber-command-secure-the-grid.github.io/cyber-command-ui/)
 * [Design doc](https://docs.google.com/document/d/1mjoG6uaqHdbwMEg5pm21HT7YGJsEqOhaRgN_B5eb3HM/edit?usp=sharing)
 
 ## Technologies

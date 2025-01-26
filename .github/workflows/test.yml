@@ -3,6 +3,8 @@ name: Build and test
 # Run for all pull requests and git push events
 on:
   pull_request:
+    branches-ignore:
+      - gh-pages
   push:
     branches-ignore:
       - gh-pages
