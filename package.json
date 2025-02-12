@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "clean": "rm -rf coverage dist tsconfig.tsbuildinfo",
+    "clean": "rm -rf coverage dist node_modules tsconfig.tsbuildinfo",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "deploy": "gh-pages -d dist",
@@ -32,6 +32,7 @@
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "@vitest/coverage-istanbul": "^3.0.5",
+    "esbuild": ">=0.25.0",
     "eslint": "^9.18.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
